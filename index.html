@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Image Editor</h1>
+
+    <input type="file" id="upload" accept="image/*" />
+    <canvas id="canvas"></canvas>
+
+    <section class="controls">
+      <div class="group">
+        <h2>Gradient Map</h2>
+        <div class="colors">
+          <input type="color" id="color1" value="#0C3F2D">
+          <input type="color" id="color2" value="#ACB59C">
+          <input type="color" id="color3" value="#E6F970">
+          <input type="color" id="color4" value="#072B4D">
+        </div>
+        <button id="randomizeColors">Randomize Colors</button>
+      </div>
+
+      <div class="group">
+        <h2>Levels</h2>
+        <label>Black Level <input type="range" id="blackLevel" min="0" max="255" value="0"/></label>
+        <label>White Level <input type="range" id="whiteLevel" min="0" max="255" value="255"/></label>
+      </div>
+
+      <div class="group">
+        <h2>Blur</h2>
+        <label>Gaussian Blur <input type="range" id="blur" min="0" max="20" value="0"/></label>
+      </div>
+
+      <div class="group">
+        <h2>Grain</h2>
+        <label>Size <input type="range" id="grainSize" min="1" max="10" value="3"/></label>
+        <label>Strength <input type="range" id="grainStrength" min="0" max="1" step="0.01" value="0.2"/></label>
+        <label><input type="checkbox" id="overlayMode" /> Overlay Blend Mode</label>
+      </div>
+
+      <div class="group">
+        <h2>Presets & History</h2>
+        <button id="applyPreset">Apply Preset</button>
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+      </div>
+
+      <button id="save">Save Image</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
